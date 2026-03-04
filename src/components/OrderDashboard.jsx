@@ -1,16 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { getOrders } from '../utils/db';
+import { subscribeToOrders } from '../utils/db';
+import { ref, remove } from "firebase/database";
+import { db } from '../firebase';
 
 const OrderDashboard = () => {
     const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        setOrders(getOrders().reverse()); // Show latest orders first
+        const unsubscribe = subscribeToOrders((data) => {
+            setOrders([...data].reverse());
+            setLoading(false);
+        });
+        return () => unsubscribe();
     }, []);
 
-    const clearOrders = () => {
+    const clearOrders = async () => {
         if (window.confirm('আপনি কি সব অর্ডারের তালিকা মুছে ফেলতে চান?')) {
-            localStorage.removeItem('alif_agro_orders');
-            setOrders([]);
+            try {
+                await remove(ref(db, 'orders'));
+                setOrders([]);
+            } catch (error) {
+                console.error("Clear orders error:", error);
+            }
         }
     };
 

@@ -32,11 +32,13 @@ export default function OrderForm() {
             date: new Date().toLocaleString()
         };
 
-        try {
-            saveOrder(orderData);
-        } catch (error) {
-            console.error("Order save temporary error", error);
-        }
+        (async () => {
+            try {
+                await saveOrder(orderData);
+            } catch (error) {
+                console.error("Order save temporary error", error);
+            }
+        })();
 
         const whatsappMessage = `*নতুন অর্ডার*\n\n` +
             `নাম: ${formData.name}\n` +
