@@ -1,4 +1,4 @@
-import { db } from './firebase';
+import { db } from '../firebase';
 import { ref, push, set, onValue, get } from "firebase/database";
 
 export const saveOrder = async (order) => {
