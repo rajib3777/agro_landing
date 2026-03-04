@@ -50,7 +50,7 @@ export default function OrderForm() {
             `ডেলিভারি চার্জ: ${isFreeDelivery ? 'ফ্রি' : deliveryCharge + ' টাকা'}\n` +
             `সর্বমোট: ${grandTotal} টাকা`;
 
-        const whatsappUrl = `https://wa.me/8801784292432?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappUrl = `https://wa.me/8801334642219?text=${encodeURIComponent(whatsappMessage)}`;
         window.location.href = whatsappUrl;
     };
 

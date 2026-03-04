@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FloatingHotline = () => {
-    const phoneNumber = "01784292432"; // Updated number
+    const phoneNumber = "01334642219"; // Updated number
 
     return (
         <div className="hotline-wrapper">
