@@ -1,113 +1,156 @@
 import React from 'react';
+import seedImg from '../assets/seeds.jpg';
 
 const Hero = () => {
     return (
-        <section id="hero" className="hero-section-alt">
-            <div className="hero-overlay-dark"></div>
-            <div className="container hero-content-centered animate-fade">
-                <div className="hero-badge animate-bounce">
-                    <img src="/src/assets/logo.jpg" alt="Logo" className="hero-logo-small" onError={(e) => e.target.style.display = 'none'} />
-                    আলিফ এগ্রো সার্ভিস
-                </div>
-                <h1 className="hero-subtitle-large">সর্বোচ্চ মানের হাইব্রিড সরগম সুদান ঘাসের বীজ</h1>
-                <p className="hero-description-alt">
-                    অধিক ফলনশীল এবং উন্নত পুষ্টিগুণ সম্পন্ন বীজ। আপনার গবাদি পশুর জন্য সেরা পুষ্টি নিশ্চিত করুন। প্রতিদিনের সমৃদ্ধির পথে আমরা আপনার সাথী।
-                </p>
+        <section className="hero-section-alt">
+            <div className="container">
+                <div className="hero-content-centered animate-fade">
+                    <div className="badge-promo">১০০% প্রিমিয়াম কোয়ালিটি</div>
+                    <h1 className="hero-subtitle-large">উন্নত মানের হাইব্রিড <br /> <span className="highlight-green">সুদান ঘাসের বীজ</span></h1>
+                    <p className="hero-description-alt">
+                        আপনার খামারের জন্য সেরা পুষ্টিগুণ সম্পন্ন এবং দ্রুত বর্ধনশীল ঘাসের নিশ্চয়তা। এক কেজি বীজের দাম <strong>৩৭০ টাকা</strong> মাত্র!
+                    </p>
 
-                <div className="hero-btns-centered">
-                    <a href="#order" className="btn-order-now">এখনই অর্ডার করুন</a>
-                    <a href="#description" className="btn-learn-more">সুবিধা গুলো দেখুন</a>
+                    <div className="hero-actions-centered">
+                        <a href="#order" className="btn btn-primary-large">এখনই অর্ডার করুন</a>
+                        <a href="#description" className="btn btn-outline-large">বিস্তারিত জানুন</a>
+                    </div>
+                </div>
+
+                <div className="hero-visual-card animate-slide-up">
+                    <img src={seedImg} alt="Sorghum Sudan Grass Seeds" className="hero-main-img-alt" />
+                    <div className="floating-info-card">
+                        <div className="info-item">
+                            <span className="info-icon">🌿</span>
+                            <div className="info-text">
+                                <strong>দ্রুত বৃদ্ধি</strong>
+                                <span>অল্প সময়েই ফলন</span>
+                            </div>
+                        </div>
+                        <div className="info-item">
+                            <span className="info-icon">💰</span>
+                            <div className="info-text">
+                                <strong>সাশ্রয়ী মূল্য</strong>
+                                <span>৩৭০৳ প্রতি কেজি</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <style jsx>{`
                 .hero-section-alt {
-                    position: relative;
-                    min-height: 80vh;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-                    color: white;
+                    padding: 80px 0;
+                    background: radial-gradient(circle at top right, #f1f8e9, #ffffff);
                     text-align: center;
                     overflow: hidden;
-                    padding: 80px 20px;
-                }
-                .hero-overlay-dark {
-                    position: absolute;
-                    top: 0; left: 0; width: 100%; height: 100%;
-                    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(46, 125, 50, 0.4) 100%);
                 }
                 .hero-content-centered {
-                    position: relative;
-                    z-index: 10;
-                    max-width: 900px;
+                    max-width: 850px;
+                    margin: 0 auto 50px;
                 }
-                .hero-badge {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    background: rgba(255,255,255,0.15);
-                    backdrop-filter: blur(10px);
+                .badge-promo {
+                    background: #e8f5e9;
+                    color: #2d5a27;
                     padding: 8px 20px;
                     border-radius: 50px;
+                    display: inline-block;
                     font-weight: 700;
-                    color: #ffca28;
+                    font-size: 0.9rem;
                     margin-bottom: 25px;
-                    border: 1px solid rgba(255,255,255,0.2);
-                }
-                .hero-logo-small {
-                    height: 24px;
-                    border-radius: 50%;
+                    border: 1px solid #c8e6c9;
                 }
                 .hero-subtitle-large {
-                    font-size: 3.5rem;
+                    font-size: 3.8rem;
                     line-height: 1.1;
-                    margin-bottom: 20px;
+                    color: #1a3317;
                     font-weight: 900;
-                    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                    margin-bottom: 25px;
+                }
+                .highlight-green {
+                    color: #4caf50;
+                    position: relative;
                 }
                 .hero-description-alt {
-                    font-size: 1.25rem;
-                    opacity: 0.9;
+                    font-size: 1.3rem;
+                    color: #555;
                     margin-bottom: 40px;
-                    max-width: 700px;
-                    margin-inline: auto;
+                    line-height: 1.6;
                 }
-                .hero-btns-centered {
+                .hero-actions-centered {
                     display: flex;
                     gap: 20px;
                     justify-content: center;
                 }
-                .btn-order-now {
-                    background: #4caf50;
+                .btn-primary-large {
+                    background: #2d5a27;
                     color: white;
-                    padding: 15px 40px;
+                    padding: 18px 40px;
                     border-radius: 50px;
-                    text-decoration: none;
                     font-weight: 800;
                     font-size: 1.1rem;
-                    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
-                    transition: transform 0.3s;
-                }
-                .btn-order-now:hover { transform: translateY(-5px); }
-                .btn-learn-more {
-                    background: transparent;
-                    color: white;
-                    padding: 15px 40px;
-                    border-radius: 50px;
                     text-decoration: none;
-                    font-weight: 700;
-                    border: 2px solid white;
-                    transition: all 0.3s;
+                    box-shadow: 0 10px 25px rgba(45, 90, 39, 0.3);
+                    transition: 0.3s;
                 }
-                .btn-learn-more:hover { background: white; color: #2d5a27; }
+                .btn-primary-large:hover { background: #4caf50; transform: translateY(-3px); }
+                
+                .btn-outline-large {
+                    border: 2px solid #2d5a27;
+                    color: #2d5a27;
+                    padding: 18px 40px;
+                    border-radius: 50px;
+                    font-weight: 800;
+                    font-size: 1.1rem;
+                    text-decoration: none;
+                    transition: 0.3s;
+                }
+                .btn-outline-large:hover { background: #f1f8e9; }
+
+                .hero-visual-card {
+                    position: relative;
+                    max-width: 900px;
+                    margin: 0 auto;
+                }
+                .hero-main-img-alt {
+                    width: 100%;
+                    border-radius: 40px;
+                    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+                }
+                .floating-info-card {
+                    position: absolute;
+                    bottom: 40px;
+                    left: -30px;
+                    background: white;
+                    padding: 25px;
+                    border-radius: 25px;
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                .info-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    text-align: left;
+                }
+                .info-icon { font-size: 1.8rem; }
+                .info-text strong { display: block; color: #1a3317; font-size: 1rem; }
+                .info-text span { color: #666; font-size: 0.85rem; }
 
                 @media (max-width: 768px) {
-                    .hero-subtitle-large { font-size: 2.2rem; }
-                    .hero-btns-centered { flex-direction: column; gap: 15px; }
-                    .btn-order-now, .btn-learn-more { width: 100%; text-align: center; }
+                    .hero-subtitle-large { font-size: 2.5rem; }
+                    .hero-actions-centered { flex-direction: column; }
+                    .floating-info-card { display: none; }
                 }
+
+                @keyframes fade {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fade { animation: fade 1.5s ease; }
             `}</style>
         </section>
     );

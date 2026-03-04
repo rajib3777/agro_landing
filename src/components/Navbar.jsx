@@ -1,10 +1,13 @@
+import React from 'react';
+import logoImg from '../assets/logo.jpg';
+
 export default function Navbar() {
   return (
     <nav className="navbar sticky">
       <div className="container nav-content">
         <div className="logo-area">
           <img
-            src="/src/assets/logo.jpg"
+            src={logoImg}
             alt="Alif Agro"
             className="nav-logo-img"
             style={{ height: '40px', borderRadius: '8px' }}

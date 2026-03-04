@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import seedImg from '../assets/seeds.jpg';
+import sproutImg from '../assets/product2.jpg';
+import grassImg from '../assets/product3.jpg';
 
 const ProductGallery = () => {
     const images = [
-        { src: "/src/assets/seeds.jpg", title: "উন্নত মানের হাইব্রিড বীজ", desc: "সেরা মানের ফ্রেশ বীজ যা অধিক ফলনের নিশ্চয়তা দেয়।" },
-        { src: "/src/assets/product2.jpg", title: "অঙ্কুরোদগম সাফল্য", desc: "রোপনের কিছুদিনের মধ্যেই দুর্দান্ত অঙ্কুরোদগম।" },
-        { src: "/src/assets/product3.jpg", title: "লতা ও ঘাসের ফলন", desc: "পরিনত অবস্থায় পুষ্টিকর ও রসালো ঘাসের সমারোহ।" }
+        { src: seedImg, title: "উন্নত মানের হাইব্রিড বীজ", desc: "সেরা মানের ফ্রেশ বীজ যা অধিক ফলনের নিশ্চয়তা দেয়।" },
+        { src: sproutImg, title: "অঙ্কুরোদগম সাফল্য", desc: "রোপনের কিছুদিনের মধ্যেই দুর্দান্ত অঙ্কুরোদগম।" },
+        { src: grassImg, title: "লতা ও ঘাসের ফলন", desc: "পরিনত অবস্থায় পুষ্টিকর ও রসালো ঘাসের সমারোহ।" }
     ];
 
     const [activeImg, setActiveImg] = useState(images[0].src);
