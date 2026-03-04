@@ -17,7 +17,8 @@ export default function OrderForm() {
     };
 
     const productTotal = formData.quantity * SEED_PRICE;
-    const deliveryCharge = DELIVERY_FEES[formData.location];
+    const isFreeDelivery = formData.quantity >= 5;
+    const deliveryCharge = isFreeDelivery ? 0 : DELIVERY_FEES[formData.location];
     const grandTotal = productTotal + deliveryCharge;
 
     const handleSubmit = (e) => {
@@ -46,7 +47,7 @@ export default function OrderForm() {
             `ঠিকানা: ${formData.address}\n` +
             `পরিমাণ: ${formData.quantity} কেজি\n` +
             `লোকেশন: ${formData.location === 'inside' ? 'ঢাকার ভিতরে' : 'ঢাকার বাইরে'}\n` +
-            `ডেলিভারি চার্জ: ${deliveryCharge} টাকা\n` +
+            `ডেলিভারি চার্জ: ${isFreeDelivery ? 'ফ্রি' : deliveryCharge + ' টাকা'}\n` +
             `সর্বমোট: ${grandTotal} টাকা`;
 
         const whatsappUrl = `https://wa.me/8801784292432?text=${encodeURIComponent(whatsappMessage)}`;
@@ -100,6 +101,7 @@ export default function OrderForm() {
                                         />
                                         <span className="qty-unit">কেজি</span>
                                     </div>
+                                    {isFreeDelivery && <div className="free-delivery-badge">🚚 ডেলিভারি চার্জ ফ্রি!</div>}
                                 </div>
                                 <div className="form-group half">
                                     <label>লোকেশন</label>
@@ -111,6 +113,9 @@ export default function OrderForm() {
                                         <option value="outside">ঢাকার বাইরে (১১০৳)</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div className="delivery-notice-alt">
+                                💡 ৫ কেজি বা তার বেশি অর্ডার করলে <strong>ডেলিভারি চার্জ একদম ফ্রি!</strong>
                             </div>
                             <button type="submit" className="btn-order-submit">
                                 <span className="btn-icon">📦</span> অর্ডার কনফার্ম করুন
@@ -144,7 +149,9 @@ export default function OrderForm() {
                                 </div>
                                 <div className="summary-row">
                                     <span className="label">ডেলিভারি চার্জ</span>
-                                    <span className="value">{deliveryCharge} টাকা</span>
+                                    <span className={`value ${isFreeDelivery ? 'free-text' : ''}`}>
+                                        {isFreeDelivery ? 'ফ্রি (০ টাকা)' : deliveryCharge + ' টাকা'}
+                                    </span>
                                 </div>
                                 <div className="summary-total-modern">
                                     <span className="total-label">সর্বমোট মূল্য</span>
@@ -254,6 +261,34 @@ export default function OrderForm() {
                     background: #4caf50;
                     transform: translateY(-3px);
                     box-shadow: 0 15px 30px rgba(76, 175, 80, 0.3);
+                }
+                .free-delivery-badge {
+                    background: #e8f5e9;
+                    color: #2e7d32;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    padding: 5px 12px;
+                    border-radius: 50px;
+                    margin-top: 8px;
+                    display: inline-block;
+                    animation: bounce 2s infinite;
+                }
+                .delivery-notice-alt {
+                    background: #fff8e1;
+                    padding: 12px;
+                    border-radius: 12px;
+                    font-size: 0.9rem;
+                    color: #795548;
+                    margin-bottom: 20px;
+                    border-left: 4px solid #ffca28;
+                }
+                .free-text {
+                    color: #ffca28;
+                    font-weight: 800;
+                }
+                @keyframes bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-3px); }
                 }
 
                 /* Summary Card */
