@@ -1,16 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-// Firebase configuration placeholder
-// The user will need to replace these with their own config
+// Firebase configuration provided by the user
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "YOUR_API_KEY",
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "YOUR_AUTH_DOMAIN",
-    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL || "YOUR_DATABASE_URL",
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "YOUR_PROJECT_ID",
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "YOUR_STORAGE_BUCKET",
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "YOUR_MESSAGING_SENDER_ID",
-    appId: import.meta.env.VITE_FIREBASE_APP_ID || "YOUR_APP_ID"
+    apiKey: "AIzaSyCpSa1MJfnsTKzH-0CaDgikLD3Y7y6GfWs",
+    authDomain: "alifagro-4ca5d.firebaseapp.com",
+    databaseURL: "https://alifagro-4ca5d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "alifagro-4ca5d",
+    storageBucket: "alifagro-4ca5d.firebasestorage.app",
+    messagingSenderId: "521940957026",
+    appId: "1:521940957026:web:d6d174a95fb863bc145e3b",
+    measurementId: "G-3NCY7ZRH3H"
 };
 
 // Initialize Firebase
