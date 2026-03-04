@@ -77,7 +77,17 @@ const FloatingHotline = () => {
                         right: 20px;
                     }
                     .hotline-info { display: none; }
-                    .hotline-btn { padding: 8px; }
+                    .hotline-btn { 
+                        padding: 10px;
+                        width: 50px;
+                        height: 50px;
+                        justify-content: center;
+                        border-radius: 50%;
+                    }
+                    .hotline-icon {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
 
                 @keyframes pulse {

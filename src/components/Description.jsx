@@ -7,6 +7,16 @@ const Description = () => {
     return (
         <section id="description" className="description-section">
             <div className="container">
+                {/* Special Offer Banner */}
+                <div className="promo-banner-premium animate-fade">
+                    <div className="promo-content">
+                        <div className="promo-badge">ধামাকা অফার! 🎁</div>
+                        <h2>৫ কেজি বা তার বেশি অর্ডার করলেই <span className="highlight-text">ডেলিভারি চার্জ একদম ফ্রি!</span></h2>
+                        <p>সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা।</p>
+                        <a href="#order" className="promo-cta">এখনই অর্ডার করুন</a>
+                    </div>
+                </div>
+
                 {/* Introduction */}
                 <div className="intro-card animate-fade">
                     <h2 className="description-title">কেন হাইব্রিড সরগম সুদান ঘাস সেরা?</h2>
@@ -106,6 +116,110 @@ const Description = () => {
                     max-width: 900px;
                     margin: 0 auto 30px;
                 }
+                .promo-banner-premium {
+                    background: linear-gradient(135deg, #ff9800 0%, #f44336 50%, #d32f2f 100%);
+                    border-radius: 30px;
+                    padding: 40px 30px;
+                    text-align: center;
+                    color: white;
+                    margin: 0 auto 40px;
+                    max-width: 800px;
+                    position: relative;
+                    overflow: hidden;
+                    box-shadow: 0 20px 40px rgba(244, 67, 54, 0.2);
+                    border: 3px solid #ffca28;
+                }
+                .promo-banner-premium::before {
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+                    animation: rotate 8s linear infinite;
+                }
+                /* Floating particles effect (CSS only) */
+                .promo-banner-premium::after {
+                    content: '✨';
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 1.5rem;
+                    animation: float 3s infinite ease-in-out;
+                    opacity: 0.6;
+                }
+                .promo-content {
+                    position: relative;
+                    z-index: 2;
+                }
+                .promo-badge {
+                    background: #fff;
+                    color: #d32f2f;
+                    padding: 6px 20px;
+                    border-radius: 50px;
+                    display: inline-block;
+                    font-weight: 900;
+                    font-size: 1rem;
+                    margin-bottom: 15px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                .promo-banner-premium h2 {
+                    font-size: 2.2rem;
+                    line-height: 1.2;
+                    margin-bottom: 15px;
+                    font-weight: 900;
+                    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                }
+                .highlight-text {
+                    color: #ffeb3b;
+                    display: inline-block;
+                    text-shadow: 0 0 15px rgba(255,235,59,0.5);
+                }
+                .promo-banner-premium p {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    margin-bottom: 25px;
+                    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                }
+                .promo-cta {
+                    background: #ffeb3b;
+                    color: #d32f2f;
+                    padding: 12px 35px;
+                    border-radius: 50px;
+                    text-decoration: none;
+                    font-weight: 900;
+                    font-size: 1.1rem;
+                    display: inline-block;
+                    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+                    border: 2px solid white;
+                }
+                .promo-cta:hover {
+                    transform: scale(1.05) rotate(-1deg);
+                    background: #fff;
+                    color: #f44336;
+                    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+                }
+                @keyframes rotate {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                @keyframes float {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-15px); }
+                }
+
+                @media (max-width: 768px) {
+                    .promo-banner-premium { padding: 50px 20px; border-radius: 30px; border-width: 3px; }
+                    .promo-banner-premium h2 { font-size: 2.2rem; }
+                    .promo-banner-premium p { font-size: 1.2rem; }
+                    .promo-cta { padding: 18px 40px; font-size: 1.2rem; width: 100%; }
+                    .promo-badge { font-size: 1rem; }
+                }
+
                 .section-visual-main {
                     margin: 0 auto 50px;
                     border-radius: 30px;
