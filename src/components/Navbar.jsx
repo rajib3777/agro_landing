@@ -44,9 +44,10 @@ export default function Navbar() {
           gap: 10px;
         }
         .logo-text {
-          font-size: 1.3rem;
+          font-size: 1.35rem;
           font-weight: 800;
           color: #2d5a27;
+          white-space: nowrap;
         }
         .nav-links {
           display: flex;
@@ -65,6 +66,22 @@ export default function Navbar() {
           color: white !important;
           padding: 8px 20px;
           border-radius: 50px;
+          white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+          .logo-text { font-size: 1.15rem; }
+          .nav-links { gap: 12px; }
+          .btn-nav { padding: 6px 15px; font-size: 0.9rem; }
+        }
+
+        @media (max-width: 480px) {
+          .navbar { padding: 8px 0; }
+          .logo-text { font-size: 1.05rem; }
+          /* Hide non-essential links on very small screens to save space */
+          .nav-links a:not(.btn-nav) { display: none; }
+          .logo-area { gap: 6px; }
+          .nav-logo-img { height: 32px !important; }
         }
       `}</style>
     </nav>

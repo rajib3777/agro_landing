@@ -12,13 +12,8 @@ const Hero = () => {
                     <div className="badge-promo-premium">১০০% প্রিমিয়াম কোয়ালিটি বীজ</div>
                     <h1 className="hero-title-premium">উন্নত মানের হাইব্রিড সর্গম <br /> <span className="highlight-yellow">সুদান ঘাসের বীজ</span></h1>
                     <p className="hero-desc-premium">
-                        আপনার খামারের জন্য সেরা পুষ্টিগুণ সম্পন্ন এবং দ্রুত বর্ধনশীল ঘাসের নিশ্চয়তা। এক কেজি বীজের দাম <strong className="price-tag-inline">৩৭০ টাকা</strong> মাত্র!
+                        আপনার খামারের জন্য সেরা পুষ্টিগুণ সম্পন্ন এবং দ্রুত বর্ধনশীল ঘাসের নিশ্চয়তা।
                     </p>
-
-                    <div className="hero-actions-centered">
-                        <a href="#order" className="btn-hero-solid">এখনই অর্ডার করুন</a>
-                        <a href="#description" className="btn-hero-outline">বিস্তারিত জানুন</a>
-                    </div>
                 </div>
             </div>
 

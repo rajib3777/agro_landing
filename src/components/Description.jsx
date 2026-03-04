@@ -1,4 +1,7 @@
 import React from 'react';
+import benefitFarm from '../assets/desc_farm.jpg';
+import benefitGrass from '../assets/desc_grass.jpg';
+import benefitField from '../assets/desc_field.jpg';
 
 const Description = () => {
     return (
@@ -12,7 +15,13 @@ const Description = () => {
                     </p>
                 </div>
 
-                {/* Features & Benefits Grid */}
+                {/* Image 1: Lush Close-up */}
+                <div className="section-visual-main animate-slide-up">
+                    <img src={benefitGrass} alt="Lush Grass Close-up" loading="lazy" />
+                    <div className="visual-tag">উন্নত মানের হাইব্রিড বীজ</div>
+                </div>
+
+                {/* Features Grid */}
                 <div className="info-grid">
                     <div className="info-card">
                         <div className="info-icon">🌿</div>
@@ -21,7 +30,7 @@ const Description = () => {
                             <li>দ্রুত অঙ্কুরোদগম ও দ্রুত বৃদ্ধি—কম সময়েই জমি সবুজ হয়</li>
                             <li>ঘন ঘাস ও ভালো পুনরায় গজানোর ক্ষমতা—কাটার পর আবার দ্রুত বাড়ে</li>
                             <li>খাবার হিসেবে গ্রহণযোগ্যতা (palatability) ভালো—গবাদিপশু সহজে খায়</li>
-                            <li>পরিচর্যা তুলনামূলক সহজ—সঠিক সময়ে পানি ও কাটিং দিলেই ভালো ফলন</li>
+                            <li>परिচর্য তুলনামূলক সহজ—সঠিক সময়ে পানি ও কাটিং দিলেই ভালো ফলন</li>
                             <li>সাইলেজ/শুকনা ঘাস (Hay) তৈরির উপযোগী—ফডার সংরক্ষণে সুবিধা</li>
                         </ul>
                     </div>
@@ -39,6 +48,11 @@ const Description = () => {
                     </div>
                 </div>
 
+                {/* Image 2: Wide Field */}
+                <div className="section-visual-wide animate-slide-up">
+                    <img src={benefitField} alt="Dense Grass Field" loading="lazy" />
+                </div>
+
                 {/* Benefits Section */}
                 <div className="benefits-box section-margin">
                     <h3>গবাদিপশুর জন্য উপকারিতা</h3>
@@ -48,41 +62,16 @@ const Description = () => {
                         <div className="benefit-item">খামারের ফিড কস্ট কমাতে অত্যন্ত সহায়ক</div>
                         <div className="benefit-item">ফডার মজুদ/পরিকল্পনা সহজ করে তোলে</div>
                     </div>
-                    <p className="note-text">
+
+                    {/* Image 3: Farm Result */}
+                    <div className="farm-result-visual animate-slide-up">
+                        <img src={benefitFarm} alt="Cows eating grass" loading="lazy" />
+                        <p className="visual-note">সুস্থ ও সবল গবাদিপশুর জন্য নিয়মিত সবুজ ঘাস</p>
+                    </div>
+
+                    <p className="note-text" style={{ marginTop: '30px' }}>
                         <span className="badge-note">নোট</span> এটি সম্পূর্ণ কনসেন্ট্রেট ফিডের বিকল্প নয়—খামারের প্রয়োজন অনুযায়ী খড়/কনসেন্ট্রেট/মিনারেল মিক্স ইত্যাদির সাথে ব্যালান্স করে খাওয়ানো ভালো।
                     </p>
-                </div>
-
-                {/* Cultivation Guide */}
-                <div className="guide-section section-margin">
-                    <h2 className="text-center section-header-alt">চাষের সংক্ষিপ্ত নির্দেশনা (Cultivation Guide)</h2>
-                    <div className="guide-steps">
-                        <div className="step">
-                            <span className="step-num">১</span>
-                            <h4>জমি ও মাটি প্রস্তুতি</h4>
-                            <p>জমি ঝুরঝুরে করে চাষ দিন, আগাছা পরিষ্কার রাখুন। পানি দাঁড়ায় এমন জমিতে ড্রেনেজ ব্যবস্থা রাখুন। বপনের আগে পচা গোবর/কম্পোস্ট দিলে বৃদ্ধি ভালো হয়।</p>
-                        </div>
-                        <div className="step">
-                            <span className="step-num">২</span>
-                            <h4>বপন পদ্ধতি</h4>
-                            <p>লাইন করে বপন করলে পরিচর্যা সহজ হয়। বপনের গভীরতা হালকা মাটিতে অল্প গভীরে রাখা ভালো। বপনের পর হালকা সেচ দিলে অঙ্কুরোদগমে সুবিধা হয়।</p>
-                        </div>
-                        <div className="step">
-                            <span className="step-num">৩</span>
-                            <h4>পানি ও সেচ</h4>
-                            <p>অঙ্কুরোদগমের সময় মাটি হালকা আর্দ্র রাখা দরকার। পরে আবহাওয়া ও মাটির ধরন অনুযায়ী সেচ দিন (অতিরিক্ত পানি জমে থাকলে ক্ষতি হতে পারে)।</p>
-                        </div>
-                        <div className="step">
-                            <span className="step-num">৪</span>
-                            <h4>সার ব্যবস্থাপনা</h4>
-                            <p>মাটির উর্বরতা অনুযায়ী সার প্রয়োগ করুন। কাটা নেওয়ার পর টপ ড্রেসিং দিলে পুনরায় বৃদ্ধি ভালো হয়। সম্ভব হলে কৃষি অফিসের পরামর্শ নিন।</p>
-                        </div>
-                        <div className="step">
-                            <span className="step-num">৫</span>
-                            <h4>কাটিং (গুরুত্বপূর্ণ)</h4>
-                            <p>গাছ পর্যাপ্ত বড় হলে প্রথম কাটিং নিন। একেবারে মাটির সাথে না কেটে কিছুটা স্টাবল (গোড়া) রেখে কাটলে দ্রুত পুনরায় গজায়।</p>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Warning/Safety Section */}
@@ -115,8 +104,50 @@ const Description = () => {
                     line-height: 1.8;
                     text-align: center;
                     max-width: 900px;
-                    margin: 0 auto 50px;
+                    margin: 0 auto 30px;
                 }
+                .section-visual-main {
+                    margin: 0 auto 50px;
+                    border-radius: 30px;
+                    overflow: hidden;
+                    height: 450px;
+                    max-width: 900px;
+                    position: relative;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                }
+                .section-visual-main img { width: 100%; height: 100%; object-fit: cover; }
+                .visual-tag {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background: #4caf50;
+                    color: white;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    font-weight: 800;
+                    font-size: 0.85rem;
+                }
+                .section-visual-wide {
+                    margin: 40px auto 60px;
+                    border-radius: 30px;
+                    overflow: hidden;
+                    height: 380px;
+                    max-width: 950px;
+                    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+                }
+                .section-visual-wide img { width: 100%; height: 100%; object-fit: cover; }
+                
+                .farm-result-visual {
+                    margin: 30px auto;
+                    padding: 10px;
+                    background: #fff;
+                    border-radius: 20px;
+                    max-width: 850px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                }
+                .farm-result-visual img { width: 100%; height: 380px; object-fit: cover; border-radius: 15px; }
+                .visual-note { margin-top: 10px; font-weight: 700; color: #2d5a27; }
+
                 .info-grid {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -129,39 +160,13 @@ const Description = () => {
                     border-radius: 30px;
                     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
                 }
-                .info-card.highlight {
-                    background: #2d5a27;
-                    color: #fff;
-                }
-                .info-card h3 {
-                    font-size: 1.5rem;
-                    margin-bottom: 20px;
-                    border-bottom: 2px solid rgba(0,0,0,0.05);
-                    padding-bottom: 10px;
-                }
-                .info-card.highlight h3 {
-                    border-color: rgba(255,255,255,0.1);
-                    color: #ffca28;
-                }
-                .info-card ul {
-                    list-style: none;
-                    padding: 0;
-                }
-                .info-card li {
-                    margin-bottom: 12px;
-                    padding-left: 20px;
-                    position: relative;
-                }
-                .info-card li::before {
-                    content: '✓';
-                    position: absolute;
-                    left: 0;
-                    color: #4caf50;
-                    font-weight: bold;
-                }
-                .info-card.highlight li::before {
-                    color: #ffca28;
-                }
+                .info-card.highlight { background: #2d5a27; color: #fff; }
+                .info-card h3 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
+                .info-card.highlight h3 { border-color: rgba(255,255,255,0.1); color: #ffca28; }
+                .info-card ul { list-style: none; padding: 0; }
+                .info-card li { margin-bottom: 12px; padding-left: 20px; position: relative; }
+                .info-card li::before { content: '✓'; position: absolute; left: 0; color: #4caf50; font-weight: bold; }
+                .info-card.highlight li::before { color: #ffca28; }
                 .info-icon { font-size: 2.5rem; margin-bottom: 15px; }
 
                 .benefits-box {
@@ -196,36 +201,6 @@ const Description = () => {
                     font-weight: 900;
                 }
 
-                .section-header-alt { font-size: 2.2rem; color: #2d5a27; margin-bottom: 40px; font-weight: 800; }
-                .guide-steps {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                    gap: 25px;
-                }
-                .step {
-                    background: #fff;
-                    padding: 30px;
-                    border-radius: 20px;
-                    position: relative;
-                    border: 1px solid #eee;
-                }
-                .step-num {
-                    position: absolute;
-                    top: -15px;
-                    left: 20px;
-                    background: #4caf50;
-                    color: white;
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: 900;
-                }
-                .step h4 { margin-bottom: 15px; color: #2d5a27; }
-                .step p { font-size: 0.95rem; line-height: 1.6; color: #555; }
-
                 .warning-card {
                     background: #fff3e0;
                     border-left: 8px solid #ff9800;
@@ -241,6 +216,9 @@ const Description = () => {
                 @media (max-width: 768px) {
                     .info-grid { grid-template-columns: 1fr; }
                     .description-title { font-size: 1.8rem; }
+                    .section-visual-main { height: 250px; }
+                    .section-visual-wide { height: 200px; margin: 30px 0; }
+                    .farm-result-visual img { height: 250px; }
                     .info-card { padding: 25px; }
                 }
 
