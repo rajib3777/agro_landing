@@ -58,7 +58,7 @@ const Hero = () => {
                 }
                 .hero-title-premium {
                     font-size: 4.5rem;
-                    line-height: 1.1;
+                    line-height: 1.3;
                     color: #fff;
                     font-weight: 900;
                     margin-bottom: 30px;
