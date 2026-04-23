@@ -21,7 +21,7 @@ export default function OrderForm() {
     const deliveryCharge = isFreeDelivery ? 0 : DELIVERY_FEES[formData.location];
     const grandTotal = productTotal + deliveryCharge;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const orderData = {
@@ -33,13 +33,11 @@ export default function OrderForm() {
             date: new Date().toLocaleString()
         };
 
-        (async () => {
-            try {
-                await saveOrder(orderData);
-            } catch (error) {
-                console.error("Order save temporary error", error);
-            }
-        })();
+        try {
+            await saveOrder(orderData);
+        } catch (error) {
+            console.error("Order save temporary error", error);
+        }
 
         const whatsappMessage = `*নতুন অর্ডার*\n\n` +
             `নাম: ${formData.name}\n` +
