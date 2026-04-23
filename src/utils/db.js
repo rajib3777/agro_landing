@@ -34,12 +34,23 @@ export const getOrders = async () => {
     }
 };
 
-// Real-time listener version
-export const subscribeToOrders = (callback) => {
+// Real-time listener version — with error handling + localStorage fallback
+export const subscribeToOrders = (callback, onError) => {
     const orderRef = ref(db, 'orders');
-    return onValue(orderRef, (snapshot) => {
-        const data = snapshot.val();
-        const orders = data ? Object.values(data) : [];
-        callback(orders);
-    });
+    const unsubscribe = onValue(
+        orderRef,
+        (snapshot) => {
+            const data = snapshot.val();
+            const orders = data ? Object.values(data) : [];
+            callback(orders, null);
+        },
+        (error) => {
+            console.error("Firebase subscription error:", error);
+            // Fallback: load from localStorage
+            const localOrders = JSON.parse(localStorage.getItem('alif_agro_orders') || '[]');
+            callback(localOrders, error);
+            if (onError) onError(error);
+        }
+    );
+    return unsubscribe;
 };
